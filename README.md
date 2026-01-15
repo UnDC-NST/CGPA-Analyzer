@@ -317,19 +317,43 @@ cd client
 npm run lint
 ```
 
-## Deployment
+## 🚀 Deployment
 
-### Frontend Deployment 
+This application is designed to be deployed with:
+- **Frontend**: Netlify (free tier)
+- **Backend**: Render (free tier)
 
-1. Build the frontend: \`npm run build\`
-2. Deploy the \`dist\` folder to your hosting service
-3. Set environment variable: \`VITE_API_URL=your-backend-url\`
+### Quick Deploy
 
-### Backend Deployment
+**New to deployment?** Start with [QUICK_START.md](QUICK_START.md) for a 3-step guide.
 
-1. Set all required environment variables
-2. Run database migrations: \`npx prisma migrate deploy\`
-3. Start the server: \`npm start\`
+**Need detailed instructions?** See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for comprehensive deployment documentation including:
+- Step-by-step Render backend setup
+- PostgreSQL database configuration
+- Netlify frontend deployment
+- Environment variables setup
+- Troubleshooting guide
+- Security best practices
+
+### Summary
+
+**Backend (Render):**
+1. Create PostgreSQL database
+2. Deploy backend service from \`server/\` directory
+3. Set environment variables (DATABASE_URL, JWT_SECRET, CLIENT_URL)
+4. Run migrations: \`npx prisma migrate deploy\`
+
+**Frontend (Netlify):**
+1. Connect GitHub repository
+2. Configure build from \`client/\` directory
+3. Set VITE_API_URL environment variable
+4. Deploy automatically on push to main branch
+
+**Files included:**
+- \`render.yaml\` - Render service configuration
+- \`client/netlify.toml\` - Netlify configuration
+- \`DEPLOYMENT_GUIDE.md\` - Detailed deployment instructions
+- \`QUICK_START.md\` - Quick deployment guide
 
 ## Contributing
 
