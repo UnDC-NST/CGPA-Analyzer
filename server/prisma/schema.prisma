@@ -87,6 +87,8 @@ model Grade {
 
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
+  
+  @@unique([collegeId, gradeLetter])
 }
 
 model CGPARecord {
