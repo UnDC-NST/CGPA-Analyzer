@@ -1,9 +1,16 @@
-import "dotenv/config";
-import { defineConfig, env } from "prisma/config";
+// Conditionally load dotenv only if available (for local development)
+// On Render, environment variables are already injected
+try {
+  await import("dotenv/config");
+} catch (e) {
+  // dotenv not available, assume env vars are already set (production)
+}
+
+import { defineConfig } from "prisma/config";
 
 export default defineConfig({
   engine: "classic",
   datasource: {
-    url: env("DATABASE_URL"),
+    url: process.env.DATABASE_URL,
   },
 });
