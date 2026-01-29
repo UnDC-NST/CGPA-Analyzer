@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "build": "npx -y prisma@6.19.1 migrate deploy && npx -y prisma@6.19.1 generate",
+    "build": "npx -y prisma@6.19.1 db push --accept-data-loss && npx -y prisma@6.19.1 generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate deploy"
   },
