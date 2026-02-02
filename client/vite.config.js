@@ -13,7 +13,8 @@ export default defineConfig({
     port: 5175,
     proxy: {
       "/api": {
-        target: process.env.BACKEND_URL || "https://cgpa-analyzer-gr3n.onrender.com",
+        target:
+          process.env.BACKEND_URL || "https://cgpa-analyzer-mq5f.onrender.com",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, "/api"),
